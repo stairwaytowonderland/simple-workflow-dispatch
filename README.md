@@ -22,7 +22,7 @@ and any optional input fields.
 ### Basic — dispatch a workflow on the current ref
 
 ```yaml
-- uses: stairwaytowonderland/workflow-dispatch@v1
+- uses: stairwaytowonderland/simple-workflow-dispatch@main
   with:
     workflow: publish.yaml
 ```
@@ -30,7 +30,7 @@ and any optional input fields.
 ### Dispatch on a specific ref
 
 ```yaml
-- uses: stairwaytowonderland/workflow-dispatch@v1
+- uses: stairwaytowonderland/simple-workflow-dispatch@main
   with:
     workflow: deploy.yaml
     ref: main
@@ -46,7 +46,7 @@ steps:
     with:
       github-token: ${{ secrets.GH_PAT }}
 
-  - uses: stairwaytowonderland/workflow-dispatch@main
+  - uses: stairwaytowonderland/simple-workflow-dispatch@main
     with:
       workflow: publish.yaml
       tag: ${{ github.ref_name }}
@@ -81,7 +81,7 @@ jobs:
       actions: write   # required to trigger workflow_dispatch
       contents: write  # include if the job also creates commits or tags
     steps:
-      - uses: stairwaytowonderland/workflow-dispatch@v1
+      - uses: stairwaytowonderland/simple-workflow-dispatch@main
         with:
           workflow: publish.yaml
 ```
