@@ -1,3 +1,13 @@
+## [1.2.0](https://github.com/stairwaytowonderland/workflow-dispatch/compare/v1.1.0...v1.2.0) (2026-04-19)
+
+### ✨ Features
+
+* change action name ([467762c](https://github.com/stairwaytowonderland/workflow-dispatch/commit/467762cd505699a227b61ffbd4005134d1c2422b))
+
+### 📚 Documentation
+
+* update README.md ([2706afe](https://github.com/stairwaytowonderland/workflow-dispatch/commit/2706afed3c2c9b89b131abdb6831d96f3871e55c))
+
 ## [1.1.0](https://github.com/stairwaytowonderland/workflow-dispatch/compare/v1.0.0...v1.1.0) (2026-04-19)
 
 ### ✨ Features
