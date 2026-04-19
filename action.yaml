@@ -17,7 +17,7 @@ inputs:
   tag:
     description: Tag associated with the workflow dispatch event.
     required: false
-    default: ${{ github.ref }}
+    default: ''
   fields:
     description: |
       Newline-separated list of additional key=value pairs passed as --field arguments.
@@ -30,7 +30,7 @@ inputs:
       Git ref to run the workflow on (e.g. sha, main, or a tag name);
       defaults to the tag input if not set.
     required: false
-    default: ''
+    default: ${{ github.ref }}
 
 runs:
   using: composite
@@ -39,7 +39,9 @@ runs:
       shell: bash
       run: |
         field=()
-        field+=(--field tag="${{ inputs.tag }}")
+        if [ -n "$TAG" ]; then
+          field+=(--field tag="$TAG")
+        fi
 
         # Append any extra fields from the fields input
         while IFS= read -r line; do
@@ -51,10 +53,12 @@ runs:
 
         gh workflow run "${{ inputs.workflow }}" \
           --repo "${{ github.repository }}" \
-          --ref "${{ inputs.ref != '' && inputs.ref || inputs.tag }}" \
+          --ref "$REF" \
           "${field[@]}"
       env:
         GH_TOKEN: ${{ github.token }}
+        REF: ${{ inputs.tag != '' && inputs.tag || inputs.ref }}
+        TAG: ${{ inputs.tag }}
         FIELDS: ${{ inputs.fields }}
 
 branding:
