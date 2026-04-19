@@ -1,4 +1,4 @@
-# Repository Template
+# workflow-dispatch
 
 A minimal starting point for a basic repository.
 
