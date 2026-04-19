@@ -1,4 +1,4 @@
-# workflow-dispatch
+# simple-workflow-dispatch
 
 A composite GitHub Action that triggers a [`workflow_dispatch`](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch)
 event on a target workflow. It wraps `gh workflow run` so callers only need to supply the workflow file, the target ref,
