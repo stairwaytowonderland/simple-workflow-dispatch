@@ -69,6 +69,27 @@ steps:
 >     NOTES_B64: ${{ inputs.notes-b64 }}
 > ```
 
+## Permissions
+
+The calling job must grant `actions: write` so that `GITHUB_TOKEN` can trigger the dispatch event:
+
+```yaml
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write   # required to trigger workflow_dispatch
+      contents: write  # include if the job also creates commits or tags
+    steps:
+      - uses: stairwaytowonderland/workflow-dispatch@v1
+        with:
+          workflow: publish.yaml
+```
+
+> [!TIP]
+> If your repository's default token permissions are set to **"Read repository contents and packages permissions"**
+> (the restrictive default), you must add `permissions: actions: write` explicitly — it will not be inherited.
+
 ## How it works
 
 1. A `tag` field is always forwarded to the target workflow (defaults to the calling workflow's `github.ref`).
