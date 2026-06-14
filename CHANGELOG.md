@@ -1,3 +1,13 @@
+## [1.3.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.2.0...v1.3.0) (2026-06-14)
+
+### ✨ Features
+
+* add github-token input ([c1a4910](https://github.com/stairwaytowonderland/simple-workflow-dispatch/commit/c1a4910b42a85535ad9e72bbc3610e89dab42e6b))
+
+### 📚 Documentation
+
+* update docs ([71b318f](https://github.com/stairwaytowonderland/simple-workflow-dispatch/commit/71b318f754240e28a90f236389bedef0c7bd2a14))
+
 ## [1.2.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.1.0...v1.2.0) (2026-04-19)
 
 ### ✨ Features
