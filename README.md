@@ -10,12 +10,13 @@ and any optional input fields.
 
 ## Inputs
 
-| Name       | Required | Default             | Description                                                          |
-| ---------- | -------- | ------------------- | -------------------------------------------------------------------- |
-| `workflow` | Yes      | —                   | Workflow file to dispatch (e.g. `publish.yaml`)                      |
-| `tag`      | No       | `${{ github.ref }}` | Tag passed as the `tag` field to the dispatched workflow             |
-| `ref`      | No       | _(value of `tag`)_  | Git ref to run the dispatched workflow on (SHA, branch, or tag name) |
-| `fields`   | No       | `''`                | Newline-separated `key=value` pairs forwarded as `--field` arguments |
+| Name           | Description                                                          | Required | Default               |
+| -------------- | -------------------------------------------------------------------- | -------- | --------------------- |
+| `github-token` | Token with `repo` + `admin:org` scopes                               | No       | `${{ github.token }}` |
+| `workflow`     | Workflow file to dispatch (e.g. `publish.yaml`)                      | Yes      | `''`                  |
+| `tag`          | Tag passed as the `tag` field to the dispatched workflow             | No       | `${{ github.ref }}`   |
+| `ref`          | Git ref to run the dispatched workflow on (SHA, branch, or tag name) | No       | `''`                  |
+| `fields`       | Newline-separated `key=value` pairs forwarded as `--field` arguments | No       | `''`                  |
 
 ## Usage
 
