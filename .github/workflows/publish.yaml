@@ -60,3 +60,11 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  normalize-majorver:
+    name: Normalize Major Version Tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: stairwaytowonderland/normalize-majorver@v1
+        with:
+          github-token: ${{ github.token }}
