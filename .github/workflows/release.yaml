@@ -21,13 +21,21 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT_CREATE_REPO }}
+          persist-credentials: false
+
+      - name: Get auth token
+        id: auth-token
+        # uses: ./.actions/.github/actions/auth-token-action
+        uses: stairwaytowonderland/actions/.github/actions/auth-token-action@v1
+        with:
+          app-private-key: ${{ secrets.ORG_REPO_USER_PRIVATE_KEY }}
+          app-client-id: ${{ vars.ORG_REPO_USER_APP_ID }}
 
       - name: Semantic release
         id: release
         uses: stairwaytowonderland/node-semantic-release@main
         with:
-          github-token: ${{ secrets.GH_PAT_CREATE_REPO }}
+          github-token: ${{ steps.auth-token.outputs.token }}
 
       - name: Dispatch Publish workflow
         if: steps.release.outputs.new-release-published == 'true'
