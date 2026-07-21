@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.7.0...v1.8.0) (2026-07-21)
+
+### ✨ Features
+
+* update LICENSE ([8655c9f](https://github.com/stairwaytowonderland/simple-workflow-dispatch/commit/8655c9f5691f04a11abeb54f557ca003cf9ae04a))
+
 ## [1.7.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.6.0...v1.7.0) (2026-07-21)
 
 ### ✨ Features
