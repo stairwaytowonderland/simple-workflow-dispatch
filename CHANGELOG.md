@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.4.0...v1.5.0) (2026-07-21)
+
+### ✨ Features
+
+* using auth action ([a12b6c0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/commit/a12b6c0e30dac09ce1673e118f2dc615358b0aa3))
+
 ## [1.4.0](https://github.com/stairwaytowonderland/simple-workflow-dispatch/compare/v1.3.0...v1.4.0) (2026-07-21)
 
 ### ✨ Features
